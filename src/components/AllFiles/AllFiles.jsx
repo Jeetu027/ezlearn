@@ -5,18 +5,20 @@ import Home from "../Home/Home";
 import DiscoverCourse from "../Course/DiscoverCourse";
 import MyCourse from "../Course/MyCourse";
 import Footer from "../Footer/Footer";
+import VideoContent from "../VideoContent/VideoContent";
 
 function AllFiles() {
   return (
     <div>
       <BrowserRouter>
         <Navbar />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/courses" element={<DiscoverCourse />} />
-            <Route path="/mycourses" element={<MyCourse />} />
-          </Routes>
-          <Footer/>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/courses" element={<DiscoverCourse />} />
+          <Route path="/mycourses" element={<MyCourse />} />
+          <Route path="/course/:courseId" element={<VideoContent />} />
+        </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

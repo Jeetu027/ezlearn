@@ -14,30 +14,25 @@ function Navbar() {
 
   // Initialize active state based on the current route
   const [active, setActive] = useState(() => {
-    const currentNavItem = navItems.find((item) => item.route === location.pathname);
+    const currentNavItem = navItems.find(
+      (item) => item.route === location.pathname
+    );
     return currentNavItem ? currentNavItem.name : "Home";
   });
 
-  // Update active state when location.pathname changes
-  useEffect(() => {
-    const currentNavItem = navItems.find((item) => item.route === location.pathname);
-    if (currentNavItem) {
-      setActive(currentNavItem.name);
-    }
-  }, [location.pathname]);
-
   // Update active bar position
   useEffect(() => {
-    const activeElement = document.querySelector(`[data-name="${active}"]`);
+    const UpdateActivebar = () => {const activeElement = document.querySelector(`[data-name="${active}"]`);
     if (activeElement && activeBarRef.current) {
-      const { offsetWidth, offsetLeft, offsetTop, offsetHeight } = activeElement;
-      activeBarRef.current.style.cssText = `
-        width: ${offsetWidth + 40}px;
-        height: ${offsetHeight + 20}px;  
-        left: ${offsetLeft - 20}px;
-        top: ${offsetTop - 10}px;
-      `;
-    }
+      activeBarRef.current.style.width = `${activeElement.offsetWidth + 40}px`;
+      activeBarRef.current.style.height = `${
+        activeElement.offsetHeight + 20
+      }px`;
+      activeBarRef.current.style.left = `${activeElement.offsetLeft - 20}px`;
+      activeBarRef.current.style.top = `${activeElement.offsetTop - 10}px`;
+    }};
+    const timeout = setTimeout(UpdateActivebar, 20);
+    return () =>clearTimeout(timeout);  
   }, [active]);
 
   return (
