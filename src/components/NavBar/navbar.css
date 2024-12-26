@@ -1,0 +1,36 @@
+.activebar {
+  position: absolute;
+  background-color: var(--black2);
+  transition: all 0.3s ease;
+  border-radius: 100px;
+}
+
+.Navitems p{
+  cursor: pointer; 
+  user-select: none; 
+  transition: color 0.3s; 
+}
+
+.Navitems p:hover {
+  color: var(--grey); /* Highlight the text on hover */
+}
+
+.link2 {
+  text-decoration: none;
+  color: var(--black2);
+}
+.Navbar{
+  padding: 10px 20px;
+  /* border-bottom: 1px solid var(--grey); */
+  /* width: 100vw; */
+  background-color: white;
+  position: sticky;
+  box-shadow: rgba(83, 83, 83, 0.22) 0px 0px 10px 10px;
+  z-index: 10;
+  top: 0;
+}
+
+.Logo img{
+  width: 70px;
+  height: 70px;
+}

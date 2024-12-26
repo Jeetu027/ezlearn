@@ -1,0 +1,52 @@
+.course h2{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding: 20px 0 0 40px;
+    width: 100%;
+}
+
+
+
+.course{
+    /* margin-top: 23vh; */
+    background-color: rgba(234, 234, 234, 0.5);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 20px;
+    gap: 20px;
+    row-gap: 20px;
+}
+
+.cards{
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    transition: all 0.3s ease ;
+    margin: 10px;
+}
+.td-none {
+    text-decoration: none;
+    color: black;
+}
+
+.cards:hover{
+    box-shadow: rgba(150, 150, 150, 0.2) 0px 0px 10px 10px;
+    cursor: pointer;
+}
+
+.cards img{
+    width: 300px;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: contain;
+    background-color: #ededed;
+}
