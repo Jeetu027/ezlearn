@@ -19,7 +19,7 @@ function Home() {
       setDropdownVisible(false);
     } else {
       const filtered = result.filter((item) =>
-        item.c_name.toLowerCase().includes(value.toLowerCase())
+        item.course_title.toLowerCase().includes(value.toLowerCase())
       );
       setFilteredResult(filtered);
       setDropdownVisible(true); // Show dropdown on valid search
@@ -33,9 +33,9 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/");
+        const response = await fetch("http://localhost:3000/search");
         const value2 = await response.json();
-        console.log(value2);
+        
 
         setResult(value2); // Store all data
         setFilteredResult(value2); // Default filtered data to all
@@ -99,7 +99,7 @@ function Home() {
             <div className="DropDownMenu">
               {filteredResult.length > 0 ? (
                 filteredResult.map((option, index) => (
-                    <button className="dropdown-item" onClick={()=>{selectData(option.c_name)}}>{option.c_name}</button>
+                    <button className="dropdown-item" key={option.course_id} onClick={()=>{selectData(option.course_title)}}>{option.course_title}</button>
                 ))
               ) : (
                 <li className="dropdown-item text-muted">No results found</li>

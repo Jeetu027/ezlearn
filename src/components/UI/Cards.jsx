@@ -13,8 +13,8 @@ function Cards(props) {
     return result.map((key) => (
       <Link key={key.course_id} to={`/course/${key.course_id}`} className="td-none">
         <div className="cards">
-          <img src="./image4.png" alt={key.c_name} />
-          <p>{key.c_name}</p>
+          <img src="./image4.png" alt={key.course_title} />
+          <p>{key.course_title}</p>
         </div>
       </Link>
     ));
@@ -23,7 +23,7 @@ function Cards(props) {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const value = await fetch("http://localhost:3000/");
+        const value = await fetch("http://localhost:3000/getcourses");
         const value2 = await value.json();
         console.log(value2);
         if (props.home === "true") {
