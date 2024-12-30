@@ -1,37 +1,26 @@
 .main-flex {
   display: flex;
   justify-content: center;
- width: 100%;
- margin-top: 30px;
+ margin-right: 400px;
+ position: relative;  
 }
 
-.main-grid {
-  width: 90%;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 20px;
- 
-}
 
-.main-video {
-  width: 100%;
-  
-}
 
 .video {
-  width: 100%;
+  width: 80%;
   aspect-ratio: 16 / 9;
   /* background-color: lightblue; */
   border-radius: 20px;
+  margin: 20px;
 }
 .rounded{
   border-radius: 20px;
 }
-
-.side-flex{
+.sc-video{
   display: flex;
-  height: 100px;
-  gap: 20px;
+  flex-direction: column;
+  
 }
 .bar{
   width: 1px;
@@ -41,6 +30,18 @@
 }
 
 .side-content{
-  height: 100px;
-  
+  position: fixed;
+  right: 0;
+  margin: 20px;
+  overflow-y: scroll; 
+  height: 70%;
+  width: 480px;
+  /* background-color: rgb(245, 245, 245); */
+  border: 1px solid grey;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+.side-content::-webkit-scrollbar{
+  display: none;
 }

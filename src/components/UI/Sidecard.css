@@ -1,0 +1,19 @@
+.side-card{
+    display: flex;
+    margin: 10px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.side-card:hover{
+    /* background-color: #ccc; */
+    box-shadow: rgba(150, 150, 150, 0.2) 0px 0px 10px 10px;
+}
+
+.side-card img{
+    aspect-ratio: 16 / 9;
+    height: 100px;
+    border-radius:10px;
+}
+.course-title{
+    margin: 10px;
+}
