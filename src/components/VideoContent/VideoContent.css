@@ -1,14 +1,16 @@
 .main-flex {
   display: flex;
   justify-content: center;
- margin-right: 400px;
+  align-items: center;
+ margin-right: 520px;
  position: relative;  
+ flex-direction: column;
 }
 
 
 
 .video {
-  width: 80%;
+  width: 90%;
   aspect-ratio: 16 / 9;
   /* background-color: lightblue; */
   border-radius: 20px;
@@ -34,7 +36,7 @@
   right: 0;
   margin: 20px;
   overflow-y: scroll; 
-  height: 70%;
+  height: 80%;
   width: 480px;
   /* background-color: rgb(245, 245, 245); */
   border: 1px solid grey;
