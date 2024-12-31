@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../NavBar/Navbar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation,useMatch  } from "react-router-dom";
 import Home from "../Home/Home";
 import DiscoverCourse from "../Course/DiscoverCourse";
 import MyCourse from "../Course/MyCourse";
@@ -11,16 +11,27 @@ function AllFiles() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/courses" element={<DiscoverCourse />} />
-          <Route path="/mycourses" element={<MyCourse />} />
-          <Route path="/course/:courseId" element={<VideoContent />} />
-        </Routes>
-        <Footer />
+        <MainContent />
       </BrowserRouter>
     </div>
+  );
+}
+
+function MainContent() {
+  const location = useLocation();
+  const isCoursePage = useMatch("/course/:courseId");
+
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/courses" element={<DiscoverCourse />} />
+        <Route path="/mycourses" element={<MyCourse />} />
+        <Route path="/course/:courseId/:videoId" element={<VideoContent />} />
+      </Routes>
+      {!isCoursePage && <Footer />}
+    </>
   );
 }
 

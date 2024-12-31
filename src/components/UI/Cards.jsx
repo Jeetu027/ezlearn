@@ -11,7 +11,7 @@ function Cards(props) {
     }
 
     return result.map((key) => (
-      <Link key={key.course_id} to={`/course/${key.course_id}`} className="td-none">
+      <Link key={key.course_id} to={`/course/${key.course_id}/1`} className="td-none">
         <div className="cards">
           <img src="./image4.png" alt={key.course_title} />
           <p>{key.course_title}</p>
