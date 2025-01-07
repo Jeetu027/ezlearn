@@ -10,14 +10,14 @@
 
 
 .video {
-  width: 90%;
+  width: 85%;
   aspect-ratio: 16 / 9;
   /* background-color: lightblue; */
-  border-radius: 20px;
+  border-radius: 25px;
   margin: 20px;
 }
 .rounded{
-  border-radius: 20px;
+  border-radius: 25px;
 }
 .sc-video{
   display: flex;
@@ -46,4 +46,14 @@
 }
 .side-content::-webkit-scrollbar{
   display: none;
+}
+
+.videoTitle{
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.videoDetail{
+  margin: 50px 80px 50px 80px;
+  text-align: justify;
 }

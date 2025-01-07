@@ -18,8 +18,8 @@ function AllFiles() {
 }
 
 function MainContent() {
-  const location = useLocation();
-  const isCoursePage = useMatch("/course/:courseId");
+  
+  const isCoursePage = useMatch("/course/:courseId/:videoId");
 
   return (
     <>
@@ -36,3 +36,4 @@ function MainContent() {
 }
 
 export default AllFiles;
+        
